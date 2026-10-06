@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">R</div>
+          <div>
+            <p class="eyebrow">Portal</p>
+            <h1>Register</h1>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-item active" data-target="login-screen">
+            <span>Login</span>
+          </button>
+          <button class="nav-item" data-target="verification-screen">
+            <span>Verification</span>
+          </button>
+          <button class="nav-item" data-target="profile-screen">
+            <span>Profile</span>
+          </button>
+          <button class="nav-item" data-target="dashboard-screen">
+            <span>Dashboard</span>
+          </button>
+          <button class="nav-item" data-target="admin-screen">
+            <span>Admin</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-card">
+          <p class="meta-label">System status</p>
+          <div class="status-pill online">Online</div>
+          <p class="muted">2 new user alerts</p>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="page-header">
+          <div>
+            <p class="eyebrow">Registration system</p>
+            <h2>Member management portal</h2>
+          </div>
+          <button class="ghost-button" id="logoutBtn">Logout</button>
+        </header>
+
+        <section id="login-screen" class="screen active">
+          <div class="panel two-column">
+            <div class="panel-copy">
+              <p class="eyebrow accent">Welcome back</p>
+              <h3>Sign in to your account</h3>
+              <p>
+                Access your dashboard, profile, and account notifications in one secure place.
+              </p>
+              <ul class="feature-list">
+                <li>Secure login with username or email</li>
+                <li>Two-step account protections</li>
+                <li>Personalized onboarding</li>
+              </ul>
+            </div>
+
+            <form class="auth-form">
+              <div class="field-group">
+                <label for="login-email">Username or email</label>
+                <input id="login-email" type="text" placeholder="jane.doe@example.com" />
+              </div>
+
+              <div class="field-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="••••••••" />
+              </div>
+
+              <div class="row-between checkbox-row">
+                <label class="checkbox">
+                  <input type="checkbox" checked />
+                  <span>Remember me</span>
+                </label>
+                <a href="#">Forgot password</a>
+              </div>
+
+              <button class="primary-button" type="button" data-target="dashboard-screen" class="switch-screen">
+                Login
+              </button>
+
+              <div class="divider"><span>or</span></div>
+
+              <div class="mini-link-row">
+                <span>New here?</span>
+                <a href="#" data-target="verification-screen" class="link-switch">Create account</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section id="verification-screen" class="screen">
+          <div class="panel two-column">
+            <div class="panel-copy">
+              <p class="eyebrow accent">Account verification</p>
+              <h3>Confirm your registration</h3>
+              <p>
+                We sent a unique verification code and a secure email link to validate your account ownership.
+              </p>
+              <div class="verification-box">
+                <div class="icon-badge">✓</div>
+                <div>
+                  <p class="meta-label">Email sent to</p>
+                  <h4>jane.doe@example.com</h4>
+                </div>
+              </div>
+            </div>
+
+            <form class="auth-form">
+              <div class="field-group">
+                <label for="verification-code">Verification code</label>
+                <input id="verification-code" type="text" placeholder="4 7 1 5 9" />
+              </div>
+
+              <div class="field-group">
+                <label>Email verification link</label>
+                <div class="link-box">
+                  <span>verify-account.example.com/confirm/7fd4b8</span>
+                  <button type="button" class="text-button">Copy</button>
+                </div>
+              </div>
+
+              <button class="primary-button" type="button" data-target="profile-screen" class="switch-screen">
+                Verify account
+              </button>
+
+              <div class="row-between meta-row">
+                <span class="muted">Didn't receive it?</span>
+                <button type="button" class="text-button alt">Resend code</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section id="profile-screen" class="screen">
+          <div class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow accent">My profile</p>
+                <h3>User information</h3>
+              </div>
+              <button class="secondary-button" type="button">Edit profile</button>
+            </div>
+
+            <div class="profile-layout">
+              <div class="profile-card">
+                <div class="avatar-box">
+                  <div class="avatar">JD</div>
+                  <label class="upload-button">Upload photo</label>
+                </div>
+                <div class="stats-list">
+                  <div>
+                    <span>Registration</span>
+                    <strong>Approved</strong>
+                  </div>
+                  <div>
+                    <span>Member since</span>
+                    <strong>Jan 2025</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid two-columns">
+                <div class="field-group">
+                  <label>First name</label>
+                  <input type="text" value="Jane" />
+                </div>
+                <div class="field-group">
+                  <label>Last name</label>
+                  <input type="text" value="Doe" />
+                </div>
+                <div class="field-group">
+                  <label>Username</label>
+                  <input type="text" value="janedoe" />
+                </div>
+                <div class="field-group">
+                  <label>Email address</label>
+                  <input type="email" value="jane.doe@example.com" />
+                </div>
+                <div class="field-group">
+                  <label>Phone</label>
+                  <input type="tel" value="+1 (555) 103-7748" />
+                </div>
+                <div class="field-group">
+                  <label>Country</label>
+                  <input type="text" value="United States" />
+                </div>
+                <div class="field-group full-width">
+                  <label>Address</label>
+                  <input type="text" value="415 Lakeview Avenue, San Diego, CA" />
+                </div>
+                <div class="field-group full-width">
+                  <label>Bio</label>
+                  <textarea rows="3">Operations specialist focused on onboarding, reporting, and user engagement.</textarea>
+                </div>
+
+                <div class="field-group">
+                  <label>Current password</label>
+                  <input type="password" value="password123" />
+                </div>
+                <div class="field-group">
+                  <label>New password</label>
+                  <input type="password" value="NewPassword2025!" />
+                </div>
+              </div>
+            </div>
+
+            <div class="button-stack right">
+              <button class="secondary-button" type="button">Change password</button>
+              <button class="primary-button" type="button" data-target="dashboard-screen" class="switch-screen">Save profile</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="dashboard-screen" class="screen">
+          <div class="dash-grid">
+            <div class="panel panel-lg">
+              <p class="eyebrow accent">Welcome back</p>
+              <h3>Hello, Jane Doe</h3>
+              <p>Your account is active and all registration checks are complete.</p>
+
+              <div class="status-card">
+                <div class="status-header">
+                  <span>Registration status</span>
+                  <span class="status-pill approved">Approved</span>
+                </div>
+                <p>Verified • Profile complete • Notifications enabled</p>
+              </div>
+            </div>
+
+            <div class="panel small-panel">
+              <p class="meta-label">Account</p>
+              <h4>Account information</h4>
+              <ul class="account-info">
+                <li><span>Username</span><strong>janedoe</strong></li>
+                <li><span>Email</span><strong>jane.doe@example.com</strong></li>
+                <li><span>Plan</span><strong>Standard</strong></li>
+                <li><span>Security</span><strong>2FA enabled</strong></li>
+              </ul>
+            </div>
+
+            <div class="panel small-panel">
+              <p class="meta-label">Alerts</p>
+              <h4>Notifications</h4>
+              <div class="notification-item">
+                <span class="dot green"></span>
+                <div>
+                  <strong>Profile updated</strong>
+                  <p>Changes saved successfully</p>
+                </div>
+              </div>
+              <div class="notification-item">
+                <span class="dot amber"></span>
+                <div>
+                  <strong>Verification reminder</strong>
+                  <p>Two actions left to complete</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-lg">
+              <div class="section-head compact">
+                <h4>Important links</h4>
+                <button class="text-button alt">Manage</button>
+              </div>
+              <div class="link-grid">
+                <a href="#" data-target="profile-screen" class="link-switch dashboard-link">Edit profile</a>
+                <a href="#" data-target="verification-screen" class="link-switch dashboard-link">Verify account</a>
+                <a href="#" class="dashboard-link">Add security info</a>
+                <a href="#" class="dashboard-link">Support center</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="admin-screen" class="screen">
+          <div class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow accent">Admin panel</p>
+                <h3>Registered users</h3>
+              </div>
+              <div class="admin-actions">
+                <button class="secondary-button" type="button">Export data</button>
+                <button class="primary-button" type="button">Approve registrations</button>
+              </div>
+            </div>
+
+            <div class="toolbar">
+              <div class="search-box">
+                <input type="search" placeholder="Search users" />
+              </div>
+              <div class="filter-group">
+                <button class="chip active">All</button>
+                <button class="chip">Active</button>
+                <button class="chip">Pending</button>
+                <button class="chip">Inactive</button>
+              </div>
+            </div>
+
+            <div class="stats-row">
+              <div class="stat-box">
+                <span>Registered</span>
+                <strong>1,284</strong>
+              </div>
+              <div class="stat-box">
+                <span>Pending approval</span>
+                <strong>42</strong>
+              </div>
+              <div class="stat-box">
+                <span>Inactive users</span>
+                <strong>18</strong>
+              </div>
+              <div class="stat-box">
+                <span>New today</span>
+                <strong>31</strong>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Jane Doe</td>
+                    <td>jane.doe@example.com</td>
+                    <td><span class="status-pill approved">Approved</span></td>
+                    <td>Member</td>
+                    <td>
+                      <button class="table-action">Edit</button>
+                      <button class="table-action danger">Deactivate</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Samuel Lee</td>
+                    <td>samuel.lee@example.com</td>
+                    <td><span class="status-pill pending">Pending</span></td>
+                    <td>Member</td>
+                    <td>
+                      <button class="table-action">Edit</button>
+                      <button class="table-action">Approve</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Rita Morgan</td>
+                    <td>rita.morgan@example.com</td>
+                    <td><span class="status-pill inactive">Inactive</span></td>
+                    <td>Admin</td>
+                    <td>
+                      <button class="table-action">Edit</button>
+                      <button class="table-action danger">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Daniel Kim</td>
+                    <td>daniel.kim@example.com</td>
+                    <td><span class="status-pill approved">Approved</span></td>
+                    <td>Member</td>
+                    <td>
+                      <button class="table-action">Edit</button>
+                      <button class="table-action danger">Deactivate</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
